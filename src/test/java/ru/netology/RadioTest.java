@@ -19,8 +19,8 @@ class RadioTest {
     @Test
     void setCurrentStationInvalidMax() {
         music.setOn(true);
-        music.setCurrentStation(10);
-        assertEquals(9, music.getCurrentStation());
+        music.setCurrentStation(11);
+        assertEquals(10, music.getCurrentStation());
 
     }
 
@@ -46,7 +46,7 @@ class RadioTest {
     @Test
     void setCurrentStationIncreaseValidMax() {
         music.setOn(true);
-        music.setCurrentStation(9);
+        music.setCurrentStation(10);
         music.increaseStation();
         assertEquals(0, music.getCurrentStation());
 
@@ -82,8 +82,8 @@ class RadioTest {
     @Test
     void setCurrentVolumeInvalidMax() {
         music.setOn(true);
-        music.setCurrentVolume(11);
-        assertEquals(10, music.getCurrentVolume());
+        music.setCurrentVolume(101);
+        assertEquals(100, music.getCurrentVolume());
     }
 
     @Test
