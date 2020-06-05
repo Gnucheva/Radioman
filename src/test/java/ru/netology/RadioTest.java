@@ -8,13 +8,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class RadioTest {
     @Test
     void setCurrentStationValid() {
-        Radio music = new Radio(5, 9);
+        Radio music = new Radio(9,0,5,5,0,100);
         assertEquals(5, music.getCurrentStation());
     }
 
     @Test
     void setCurrentStationInvalidMax() {
-        Radio music = new Radio(9);
+        Radio music=new Radio ();
         music.setCurrentStation(10);
         assertEquals(9, music.getCurrentStation());
 
@@ -22,7 +22,8 @@ class RadioTest {
 
     @Test
     void setCurrentStationInvalidMin() {
-        Radio music = new Radio(0,9);
+        Radio music = new Radio();
+        music.setCurrentStation(-5);
         assertEquals(0, music.getCurrentStation());
 
 
@@ -30,7 +31,7 @@ class RadioTest {
 
     @Test
     void setCurrentStationIncreaseValid() {
-        Radio music = new Radio(5, 9);
+        Radio music = new Radio(9,0,5,5,0,100);
         music.increaseStation();
         assertEquals(6, music.getCurrentStation());
 
@@ -39,7 +40,7 @@ class RadioTest {
 
     @Test
     void setCurrentStationIncreaseValidMax() {
-        Radio music = new Radio(9, 9);
+        Radio music = new Radio(9,0,9,5,0,100);
         music.increaseStation();
         assertEquals(0, music.getCurrentStation());
 
@@ -47,7 +48,7 @@ class RadioTest {
 
     @Test
     void setCurrentStationDecreaseValid() {
-        Radio music = new Radio(5, 9);
+        Radio music = new Radio(9,0,5,5,0,100);
         music.decreaseStation();
         assertEquals(4, music.getCurrentStation());
 
@@ -56,7 +57,7 @@ class RadioTest {
 
     @Test
     void setCurrentStationDecreaseValidMin() {
-        Radio music = new Radio(0, 9);
+        Radio music = new Radio(9,0,0,5,0,100);
         music.decreaseStation();
         assertEquals(9, music.getCurrentStation());
 
@@ -64,7 +65,7 @@ class RadioTest {
 
     @Test
     void setCurrentVolume() {
-        Radio music = new Radio(0, 5, 100);
+        Radio music = new Radio(9,0,5,5,0,100);
         assertEquals(5, music.getCurrentVolume());
 
     }
@@ -78,35 +79,36 @@ class RadioTest {
 
     @Test
     void setCurrentVolumeInvalidMin() {
-        Radio music = new Radio(0,0,100);
+        Radio music = new Radio();
+        music.setCurrentVolume(-5);
         assertEquals(0, music.getCurrentVolume());
     }
 
 
     @Test
     void setCurrentVolumeIncreaseMax() {
-        Radio music = new Radio(0, 100, 100);
+        Radio music = new Radio(9,0,5,100,0,100);
         music.increaseVolume();
         assertEquals(100, music.getCurrentVolume());
     }
 
     @Test
     void setCurrentVolumeIncrease() {
-        Radio music = new Radio(0, 5, 100);
+        Radio music = new Radio(9,0,5,5,0,100);
         music.increaseVolume();
         assertEquals(6, music.getCurrentVolume());
     }
 
     @Test
     void setCurrentVolumeDecrease() {
-        Radio music = new Radio(0, 5, 100);
+        Radio music = new Radio(9,0,5,5,0,100);
         music.decreaseVolume();
         assertEquals(4, music.getCurrentVolume());
     }
 
     @Test
     void setCurrentVolumeDecreaseMin() {
-        Radio music = new Radio(0, 0, 100);
+        Radio music = new Radio(9,0,5,0,0,100);
         music.decreaseVolume();
         assertEquals(0, music.getCurrentVolume());
     }
