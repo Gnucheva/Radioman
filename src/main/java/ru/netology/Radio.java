@@ -80,7 +80,7 @@ public class Radio {
             this.currentVolume = maxVolume;
             return;
         }
-        if (currentVolume <  minVolume) {
+        if (currentVolume < minVolume) {
             this.currentVolume = minVolume;
             return;
         }
