@@ -23,7 +23,7 @@ class RadioTest {
     @Test
     void setCurrentStationInvalidMin() {
         Radio music = new Radio();
-        music.setCurrentStation(-5);
+        music.setCurrentStation(0);
         assertEquals(0, music.getCurrentStation());
 
 
@@ -80,7 +80,7 @@ class RadioTest {
     @Test
     void setCurrentVolumeInvalidMin() {
         Radio music = new Radio();
-        music.setCurrentVolume(-5);
+        music.setCurrentVolume(0);
         assertEquals(0, music.getCurrentVolume());
     }
 
