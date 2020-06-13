@@ -9,12 +9,13 @@ class RadioTest {
     @Test
     void setCurrentStationValid() {
         Radio music = new Radio(9,0,5,5,0,100);
-        assertEquals(5, music.getCurrentStation());
+        music.setCurrentStation(6);
+        assertEquals(6, music.getCurrentStation());
     }
 
     @Test
     void setCurrentStationInvalidMax() {
-        Radio music=new Radio ();
+        Radio music=new Radio (9,0,5,5,0,100);
         music.setCurrentStation(10);
         assertEquals(9, music.getCurrentStation());
 
@@ -22,8 +23,8 @@ class RadioTest {
 
     @Test
     void setCurrentStationInvalidMin() {
-        Radio music = new Radio();
-        music.setCurrentStation(0);
+        Radio music = new Radio(9,0,5,5,0,100);
+        music.setCurrentStation(-5);
         assertEquals(0, music.getCurrentStation());
 
 
@@ -66,21 +67,22 @@ class RadioTest {
     @Test
     void setCurrentVolume() {
         Radio music = new Radio(9,0,5,5,0,100);
-        assertEquals(5, music.getCurrentVolume());
+        music.setCurrentVolume(6);
+        assertEquals(6, music.getCurrentVolume());
 
     }
 
     @Test
     void setCurrentVolumeInvalidMax() {
-        Radio music = new Radio();
+        Radio music = new Radio(9,0,5,5,0,100);
         music.setCurrentVolume(101);
         assertEquals(100, music.getCurrentVolume());
     }
 
     @Test
     void setCurrentVolumeInvalidMin() {
-        Radio music = new Radio();
-        music.setCurrentVolume(0);
+        Radio music = new Radio(9,0,5,5,0,100);
+        music.setCurrentVolume(-5);
         assertEquals(0, music.getCurrentVolume());
     }
 
